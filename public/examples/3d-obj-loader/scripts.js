@@ -30,28 +30,23 @@ scene.add( gridHelper );
 
 
 
-var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
-keyLight.position.set(-100, 0, 100);
+var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 5.0);
+keyLight.position.set(0, 1, -1);
 
-var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
-fillLight.position.set(100, 0, 100);
 
-var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
-backLight.position.set(100, 0, -100).normalize();
 
 scene.add(keyLight);
-scene.add(fillLight);
-scene.add(backLight);
+
 
 var loader = new THREE.GLTFLoader();
-loader.load("./assets/cube.glb",handle_load);
+loader.load("./assets/teste02.glb",handle_load);
 
 var mesh;
 
 function handle_load(gltf){
     scene.add( gltf.scene );
     scene.add(mesh);
-    mesh.position.z = -10;
+    
    
 }
 var animate = function () {
