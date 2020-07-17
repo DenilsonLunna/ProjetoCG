@@ -43,25 +43,6 @@ scene.add(keyLight);
 scene.add(fillLight);
 scene.add(backLight);
 
-/*var mtlLoader = new THREE.MTLLoader();
-//mtlLoader.setTexturePath('./assets/');
-mtlLoader.setPath('./assets/');
-mtlLoader.load('r2-d2.mtl', function (materials) {
-
-   // materials.preload();
-
-    var objLoader = new THREE.OBJLoader();
-    //objLoader.setMaterials(materials);
-    objLoader.setPath('./assets/');
-    objLoader.load('r2-d2.obj', function (object) {
-
-        scene.add(object);
-        object.position.y -= 60;
-
-    });
-
-});*/
-
 var loader = new THREE.GLTFLoader();
 loader.load("./assets/cube.glb",handle_load);
 
