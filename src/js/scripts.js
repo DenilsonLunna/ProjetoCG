@@ -48,18 +48,7 @@ keyLight.position.set(0, 1, -1);
 scene.add(keyLight);
 
 
-/*var loader = new THREE.GLTFLoader();
-console.log(loadFile());
-loader.load("./assets/teste02.glb",handle_load);
-
-var mesh;
-
-function handle_load(gltf){
-    scene.add( gltf.scene );
-    scene.add(mesh);
-    
-   
-}*/
+//Load de arquivo por meio do input file
 document.querySelector("#file").onchange = e =>  {
   let file = e.target.files[ 0 ];
   let reader = new FileReader();

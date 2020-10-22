@@ -7,18 +7,25 @@ html, body{
 
 div, canvas{
     border: 1px black solid;
+    
 }
-
-.menu{
+.grid-container>div{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    
+    
+}
+#menu{
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-items: center;
+}
+#menu>ul{
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: row;
     
 }
-
-.menu>input{
-    padding: 10px;
-}
-
 
