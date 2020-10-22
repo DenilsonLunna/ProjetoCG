@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/grids.css">
+   
+</head>
+<body>
+    <div class="container">
+            <ul class="menu">
+                <input id="file" type="file" />
+            </ul>
+   
+        <div class="grid-container">
+            <canvas id="canvas">
+                Canvas
+            </canvas>
+
+            <div id="inspector">
+                inspector
+            </div>
+
+            <div id="transforms">
+                Transforms
+            </div>
+
+            <div id="codes">
+                Codes
+            </div>
+    
+        </div>
+    </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script> 
+        <script src="./plugins/OrbitControls.js"></script>
+        <script src="./plugins/GLTFLoader.js"></script>
+        <script type="module" src="./js/scripts.js"></script>
+        <script src="./js/menu.js"></script>
+
+ 
+    
+    
+</body>
+</html>

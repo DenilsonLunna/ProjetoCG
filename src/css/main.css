@@ -1,0 +1,24 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#DDDDDD;
+}
+
+div, canvas{
+    border: 1px black solid;
+}
+
+.menu{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.menu>input{
+    padding: 10px;
+}
+
+

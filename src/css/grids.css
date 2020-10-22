@@ -1,0 +1,22 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 2fr 1fr;
+    height: 100vh;
+}
+
+
+#canvas{
+    grid-area: "canvas";
+}
+#inspector{
+    grid-area: "inspector";
+}
+#transforms{
+    grid-area: "transforms";
+    grid-column: 1/3;
+}
+#codes{
+    grid-area: "codes";
+    grid-column: 1/3;
+}
