@@ -28,4 +28,27 @@ div, canvas{
     display: flex;
     
 }
+#transforms{
+    display: flex;
+    flex-direction: column;
+    
+
+}
+#transforms_pieces{
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    
+    padding: 0;
+
+}
+#transforms_pieces>div{
+    width: 160px;   
+    margin: 5px;
+    text-align: center;
+    font-size: 200px;
+    padding: 0;
+    
+}
+
 

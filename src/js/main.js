@@ -1,5 +1,4 @@
-import {gridHelper, axisHelper} from './helper.js';
-import {loadFile} from './load_manager.js';
+import {gridHelper, axisHelper} from './helpers.js';
 
 var scene = new THREE.Scene();
 
@@ -33,21 +32,21 @@ window.addEventListener("resize", () => {
 
 
 
+
+
 //criando grid de ajuda
 scene.add(gridHelper(10,10));
 
+//criando eixos 
 scene.add(axisHelper(20));
 
 
 
-var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 5.0);
-keyLight.position.set(0, 1, -1);
-
-
-
+var keyLight = new THREE.AmbientLight( 0xffffff  );
+//keyLight.position.set(0, 1, -1);
 scene.add(keyLight);
 
-
+var mesh; 
 //Load de arquivo por meio do input file
 document.querySelector("#file").onchange = e =>  {
   let file = e.target.files[ 0 ];
@@ -55,16 +54,46 @@ document.querySelector("#file").onchange = e =>  {
   reader.readAsArrayBuffer( file );
   reader.onload = gltfText => {
       let loader = new THREE.GLTFLoader();
-      loader.parse( gltfText.target.result, '', (gltf) => {
-          scene.add(gltf.scene)
+      loader.parse( gltfText.target.result,'', (gltf) => {  
+          mesh = gltf.scene;
+          scene.add(gltf.scene);
+        
+          
+          renderer.render( scene, camera );
       }, 
       errMassage => { console.error(errMassage) } )
   }
 }
-var animate = function () {
-	requestAnimationFrame( animate );
-	controls.update();
+
+//Events Key
+function keyPressed(e){
+  switch(e.key) {
+    case 'ArrowUp':
+        mesh.position.y += 1;
+        
+        break;
+    case 'ArrowDown':
+      mesh.position.y -= 1;
+        break;
+    case 'ArrowLeft':
+      mesh.position.x -= 1;
+        break;
+    case 'ArrowRight':
+      mesh.position.x += 1;
+        break;
+  }
+  e.preventDefault();
+  
+}
+
+document.body.addEventListener('keydown', keyPressed);
+
+var update = function () {
+	requestAnimationFrame( update );
+  controls.update();
+  
+  
 	renderer.render(scene, camera);
 };
 
-animate();
+update();
